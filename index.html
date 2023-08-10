@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Report Card</title>
+    <!-- BootCss -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js" defer></script>
+    <script type="text/javascript" src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- 1st section -->
+    <section id="title">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand brand-text" href="#">Report Card Generator</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#std_input_table">Get started</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacts">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>Generate report card immidietly.<br><br>PDF | PRINT</h1>
+            <a type="button" href="#std_input_table" class="btn btn-light btn-lg title-btn"><i class="material-icons title-icons">
+              create
+            </i> Create</a>
+          </div>
+          <div class="col-lg-6">
+            <img class="rc-img" src="rc.jpg" alt="Report Card Image">
+          </div>
+        </div>
+      </div>
+      <!-- title name and a picture and button -->
+      
+    </section>
+   
+    <!-- Form Section -->
+    <table class="input-form" id="std_input_table" style="width: 100%;">
+      <colgroup>
+      <col span="1" style="width: 20%;">
+      <col span="1" style="width: auto;">
+      </colgroup>
+      <tr>
+        <th colspan="2" style="font-size: 25px;">INPUT DATA HERE</th>
+      </tr>
+      <tr>
+        <td>School</td>
+        <td><input type="text" name="" placeholder="School name" class="i-school"></td>
+      </tr>
+      <tr>
+        <td>Student Name</td>
+        <td><input type="text" name="" placeholder="Full name" class="i-name"></td>
+      </tr>
+      <tr>
+        <td>Roll No.</td>
+        <td><input type="text" name="" placeholder="Roll no" class="i-roll"></td>
+      </tr>
+      <tr>
+        <td>Class</td>
+        <td>
+          <select class="i-class">
+            <option value="I">Class 1</option>
+            <option value="II">Class 2</option>
+            <option value="III">Class 3</option>
+            <option value="IV">Class 4</option>
+            <option value="V">Class 5</option>
+            <option value="VI">Class 6</option>
+            <option value="VII">Class 7</option>
+            <option value="VIII">Class 8</option>
+            <option value="IX">Class 9</option>
+            <option value="X">Class 10</option>
+            <option value="XI">Class 11</option>
+            <option value="XII">Class 12</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          <select class="i-gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Section</td>
+        <td><input type="text" name="" placeholder="Section" class="i-sec"></td>
+      </tr>
+      <tr>
+        <td>Father Name</td>
+        <td><input type="text" name="" placeholder="Father's name" class="i-father"></td>
+      </tr>
+      <tr>
+        <td>Mobile No.</td>
+        <td><input type="text" name="" placeholder="Mobile no" class="i-mob"></td>
+      </tr>
+      <tr>
+        <td>Science Total</td>
+        <td><input type="number" name="" placeholder="science total" class="i-science-total"></td>
+      </tr>
+      <tr>
+        <td>Science Secured</td>
+        <td><input type="number" value="0" name="" class="i-science-sec"></td>
+      </tr>
+      <tr>
+        <td>Punjabi Total</td>
+        <td><input type="number" name="" placeholder="punjabi total" class="i-punjabi-total"></td>
+      </tr>
+      <tr>
+        <td>Punjabi Secured</td>
+        <td><input type="number" value="0" name="" class="i-punjabi-sec"></td>
+      </tr>
+      <tr>
+        <td>Math Total</td>
+        <td><input type="number" name="" placeholder="Math total" class="i-math-total"></td>
+      </tr>
+      <tr>
+        <td>Math Secured</td>
+        <td><input type="number" value="0" name="" class="i-math-sec"></td>
+      </tr>
+      <tr>
+        <td>English Total</td>
+        <td><input type="number" name="" placeholder="english total" class="i-english-total"></td>
+      </tr>
+      <tr>
+        <td>English Secured</td>
+        <td><input type="number" value="0" name="" class="i-english-sec"></td>
+      </tr>
+      <tr>
+        <td>SST Total</td>
+        <td><input type="number" name="" placeholder="sst total" class="i-sst-total"></td>
+      </tr>
+      <tr>
+        <td>SST Secured</td>
+        <td><input type="number" value="0" name="" class="i-sst-sec"></td>
+      </tr>
+     
+      <tr>
+        <td>Result</td>
+        <td>
+          <select class="i-res">
+            <option value="PASS">PASS</option>
+            <option value="FAIL">FAIL</option>
+            <option value="ABSENT">ABSENT</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th><button style="color: red;width: 70%" onclick="reset_table();">RESET</button></th>
+        <th><input onclick="send_data_for_print()" type="submit" value="SUBMIT DATA" name=""></th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Download</th>
+        <td>
+          <button style="margin-right: 30px;padding: 5px;" onclick="GenerateCard()">PDF(C)</button>
+          <button style="margin-top: 10px; margin-right: 30px; padding: 5px;" onclick="GenerateCard_bw()">PDF(B&W)</button>
+        </td>
+      </tr>
+      <tr>
+        <th>Print</th>
+        <td>
+          <button style="padding: 5px;width: 40%;" onclick="print_report_card()">PRINT(C)</button>
+          <button style="padding: 5px;width: 40%;" onclick="print_report_card_bw()">PRINT(B/W)</button>
+        </td>
+      </tr>
+    </table>
+    
+    <!-- Pdf generate section -->
+    <hr>
+    <h3 style="text-align: center;">TYPE: COLOUR</h3 style="text-align: center;">
+    <hr>
+    <div id="report-card-HTML">
+      <p class="school-title">Mata Gujri Public School</p>
+      <center>
+      <table id="report-table">
+        <tr>
+          <th colspan="2">STUDENT DETAILS</th>
+        </tr>
+        <tr>
+          <th colspan="2"></th>
+        </tr>
+        <tr>
+          <th>NAME :</th>
+          <th id="p-name">EXAMPLE</th>
+        </tr>
+        
+        <tr>
+          <td>Class :</td>
+          <td id="p-class">10</td>
+        </tr>
+        <tr>
+          <td>Roll No :</td>
+          <td id="p-roll">036AC2021</td>
+        </tr>
+        <tr>
+          <td>Section :</td>
+          <td id="p-section">C</td>
+        </tr>
+        <tr>
+          <td>Gender: </td>
+          <td id="p-gender">Male</td>
+        </tr>
+        <tr>
+          <td>Father :</td>
+          <td id="p-father">EXAMPLE</td>
+        </tr>
+        <tr>
+          <td>Mobile :</td>
+          <td id="p-mobile">1234567890</td>
+        </tr>
+        
+      </table>
+      <table id="report-table">
+        <tr>
+          <th colspan="3">MARK DISTRIBUTION</th>
+        </tr>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+        <tr>
+          <th>SUBJECTS</th>
+          <th>TOTAL</th>
+          <th>SECURED</th>
+        </tr>
+        <tr>
+          <td>Science</td>
+          <td id="p-science-total">100</td>
+          <td id="p-science-mark">100</td>
+        </tr>
+        <tr>
+          <td>Punjabi</td>
+          <td id="p-punjabi-total">100</td>
+          <td id="p-punjabi-mark">100</td>
+        </tr>
+        <tr>
+          <td>Math</td>
+          <td id="p-math-total">100</td>
+          <td id="p-math-mark">100</td>
+        </tr>
+        <tr>
+          <td>English</td>
+          <td id="p-english-total">100</td>
+          <td id="p-english-mark">100</td>
+        </tr>
+        <tr>
+          <td>SST</td>
+          <td id="p-sst-total">100</td>
+          <td id="p-sst-mark">100</td>
+        </tr>
+        <tr>
+          <th colspan="2">RESULT</th>
+          <td id="p-result">100</td>
+        </tr>
+        <tr>
+          <th colspan="2">TOTAL MARKS</th>
+          <td id="p-total-mark">500</td>
+        </tr>
+        <tr>
+          <th colspan="2">PERCENTAGE %</th>
+          <td id="p-percentage">100%</td>
+        </tr>
+      </table>
+      <h6 style="color: grey;">@made by <a href="https://github.com/mehakpreet1213?tab=repositories">Mehak</a></h6>
+      </center>
+      
+    </div>
+    <hr>
+    <h3 style="text-align: center;">TYPE: B/W</h3>
+    <hr>
+    <!-- Pdf Black and White -->
+    <div class="table_bw-div">
+      
+      <center>
+      <b style="font-size: 23px;" class="school-title_bw">Mata Gujri Public School</b><br><p>REPORT CARD</p>
+      <table class="table_bw">
+        <tr>
+          <th colspan="2">STUDENT DETAILS</th>
+        </tr>
+        <tr>
+          <th colspan="2"></th>
+        </tr>
+        <tr>
+          <th>NAME :</th>
+          <th class="p-name">Example</th>
+        </tr>
+        
+        <tr>
+          <td>Class :</td>
+          <td class="p-class">10</td>
+        </tr>
+        <tr>
+          <td>Roll No :</td>
+          <td class="p-roll">036AC2021</td>
+        </tr>
+        <tr>
+          <td>Section :</td>
+          <td class="p-section">c</td>
+        </tr>
+        <tr>
+          <td>Gender: </td>
+          <td class="p-gender">Male</td>
+        </tr>
+        <tr>
+          <td>Father :</td>
+          <td class="p-father">EXAMPLE</td>
+        </tr>
+        <tr>
+          <td>Mobile :</td>
+          <td class="p-mobile">1234567890</td>
+        </tr>
+        
+      </table>
+      <table class="table_bw">
+        <tr>
+          <th colspan="3">MARK DISTRIBUTION</th>
+        </tr>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+        <tr>
+          <th>SUBJECTS</th>
+          <th>TOTAL</th>
+          <th>SECURED</th>
+        </tr>
+        <tr>
+          <td>Science</td>
+          <td class="p-science-total">100</td>
+          <td class="p-science-mark">85</td>
+        </tr>
+        <tr>
+          <td>Punjabi</td>
+          <td class="p-punjabi-total">100</td>
+          <td class="p-punjabi-mark">90</td>
+        </tr>
+        <tr>
+          <td>Math</td>
+          <td class="p-math-total">100</td>
+          <td class="p-math-mark">78</td>
+        </tr>
+        <tr>
+          <td>English</td>
+          <td class="p-english-total">100</td>
+          <td class="p-english-mark">85</td>
+        </tr>
+        <tr>
+          <td>SST</td>
+          <td class="p-sst-total">100</td>
+          <td class="p-sst-mark">78</td>
+        </tr>
+        <tr>
+          <th colspan="2">RESULT</th>
+          <td class="p-result">100</td>
+        </tr>
+        <tr>
+          <th colspan="2">TOTAL MARKS</th>
+          <td class="p-total-mark">500</td>
+        </tr>
+        <tr>
+          <th colspan="2">PERCENTAGE %</th>
+          <td class="p-percentage">100%</td>
+        </tr>
+      </table>
+      <h6 style="color: grey;">@made by <a href="https://github.com/mehakpreet1213?tab=repositories">Mehak</a></h6>
+      </center>
+      
+    </div>
+    <hr><hr>
+    
+    <center>
+    <div class="footer" id="contacts">
+      <a href="mailto:1321mehakwork@gmail.com"><i class="material-icons">
+        email
+      </i></a>
+      <a href="https://github.com/mehakpreet1213?tab=repositories"><i class="material-icons">
+        code
+      </i></a>
+      <br>
+  
+    </div>
+  </section>
+  </center>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
